@@ -55,6 +55,6 @@ class RigolPowerSupply:
             self.set_levels(ch, v, i)
 
 
-x = RigolPowerSupply("dp832", "USB0::0x1AB1::0x0E11::DP8C231401286::INSTR")
-x.load_config("tests/myconfig.json")
-pass
+# x = RigolPowerSupply("dp832", "USB0::0x1AB1::0x0E11::DP8C231401286::INSTR")
+# x.load_config("tests/myconfig.json")
+# pass

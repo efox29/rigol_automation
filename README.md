@@ -31,6 +31,27 @@ psu.turn_on(1) # turn on channel 1
 Valid values for MODEL = 'dp832'
 VISA_DESC is a string of the Visa Descriptor
 
+### Create config file
+
+Create a config file so that you can load preset values.
+
+```json
+{
+  "ch1": {
+    "volt": 3.35,
+    "current": 2.12
+  },
+  "ch2": {
+    "volt": 1,
+    "current": 0.2
+  },
+  "ch3": {
+    "volt": 1.0,
+    "current": 0.2
+  }
+}
+```
+
 ## Running Tests
 
 In the root directory, run
