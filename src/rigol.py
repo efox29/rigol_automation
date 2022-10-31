@@ -1,3 +1,4 @@
+import json
 import time
 
 import numpy as np
@@ -39,3 +40,21 @@ class RigolPowerSupply:
         self.turn_off(ch)
         time.sleep(seconds)
         self.turn_on(ch)
+
+    def load_config(self, file):
+        config = open(file)
+        data = json.load(config)
+        config.close()
+        # validate the config before continuing
+        # TODO: validate the config
+        # read config
+        for key in data.keys():
+            v = data[key]["volt"]
+            i = data[key]["current"]
+            ch = int(key[2])
+            self.set_levels(ch, v, i)
+
+
+x = RigolPowerSupply("dp832", "USB0::0x1AB1::0x0E11::DP8C231401286::INSTR")
+x.load_config("tests/myconfig.json")
+pass
