@@ -2,6 +2,16 @@
 
 This project aims to control Rigol products (though right now, I only have the DP832)
 
+## Install
+
+Run the setup.py to install so that pip can see it.
+
+```bash
+python setup.py install
+```
+
+If there is an update to the repo be sure to install it again. You may need to update other projects that use this to ensure its using the latest.
+
 ## How to Use
 
 You need to know the VISA descriptor number of your device. Within the UTILY section, you should see it.
