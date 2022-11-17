@@ -1,0 +1,14 @@
+{
+  "ch1": {
+    "volt": 3.6,
+    "current": 2.5
+  },
+  "ch2": {
+    "volt": 4.4,
+    "current": 0.2
+  },
+  "ch3": {
+    "volt": 3.6,
+    "current": 3.0
+  }
+}

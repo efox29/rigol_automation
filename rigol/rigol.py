@@ -49,10 +49,12 @@ class RigolPowerSupply:
         # TODO: validate the config
         # read config
         for key in data.keys():
-            v = data[key]["volt"]
-            i = data[key]["current"]
-            ch = int(key[2])
-            self.set_levels(ch, v, i)
+            if "ch" in key:
+                v = data[key]["volt"]
+                i = data[key]["current"]
+                ch = int(key[2])
+                self.set_levels(ch, v, i)
+        return "OK"
 
 
 # x = RigolPowerSupply("dp832", "USB0::0x1AB1::0x0E11::DP8C231401286::INSTR")
