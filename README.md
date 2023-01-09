@@ -47,17 +47,10 @@ Create a config file so that you can load preset values.
 
 ```json
 {
-  "ch1": {
-    "volt": 3.35,
-    "current": 2.12
-  },
-  "ch2": {
-    "volt": 1,
-    "current": 0.2
-  },
+  "visa_desc": "USB0::0x1AB1::0x0E11::DP8C231401286::INSTR",
   "ch3": {
-    "volt": 1.0,
-    "current": 0.2
+    "volt": 3.6,
+    "current": 3.0
   }
 }
 ```
