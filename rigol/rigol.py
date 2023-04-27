@@ -41,6 +41,14 @@ class RigolPowerSupply:
         time.sleep(seconds)
         self.turn_on(ch)
 
+    def measure_current(self, ch):
+        current = float(self.psu.query(f"MEAS:CURR? CH{ch}").rstrip())
+        return current
+
+    def measure_voltage(self, ch):
+        voltage = float(self.psu.query(f"MEAS:VOLT? CH{ch}").rstrip())
+        return voltage
+
     def load_config(self, file):
         config = open(file)
         data = json.load(config)
@@ -59,4 +67,5 @@ class RigolPowerSupply:
 
 # x = RigolPowerSupply("dp832", "USB0::0x1AB1::0x0E11::DP8C231401286::INSTR")
 # x.load_config("tests/myconfig.json")
+# x.get_current(3)
 # pass

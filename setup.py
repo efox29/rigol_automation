@@ -1,8 +1,8 @@
 from setuptools import find_packages, setup
 
 setup(
-    name="rigols_tools",
-    version="1.0.1",
+    name="rigol_tools",
+    version="1.0.2",
     description="Rigol Automation Library",
     author="enrico",
     # author_email='en@en.com',
