@@ -68,8 +68,30 @@ parser.add_argument(
     help="specifiy channel to turn off",
 )
 
+parser.add_argument(
+    "-r",
+    "--read",
+    action="store",
+    type=int,
+    choices={1, 2, 3},
+    help="specifiy channel to read",
+)
+
+parser.add_argument(
+    "--script",
+    action="store",
+    help="profile to run"
+)
+
 
 args = parser.parse_args()
+
+if args.script:
+    psu = get_psu()
+    print(f"Config load script {args.script}")
+    
+   
+    exit(0)
 
 if args.init:
 
@@ -90,6 +112,11 @@ if args.state and args.channel:
 
     print(f"CH{args.channel} = {args.state}")
 
+if args.read:
+    psu = get_psu()
+    i = psu.measure_current(args.read)
+    print(f"CH{args.read}\tCurrent:{i}")
+
 if args.on:
     psu = get_psu()
     psu.turn_on(args.on)
@@ -97,3 +124,7 @@ if args.on:
 elif args.off:
     psu = get_psu()
     psu.turn_off(args.off)
+
+
+
+
