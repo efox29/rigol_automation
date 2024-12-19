@@ -4,6 +4,16 @@ This project aims to control Rigol products (though right now, I only have the D
 
 ## Install
 
+We make use of some dependencies so install the following.
+
+NI-VISA backend - https://pyvisa.readthedocs.io/en/latest/faq/getting_nivisa.html#faq-getting-nivisa
+
+The library needs some additional files. If you know how to install local packages in an env, then do so - its probably the better way. 
+
+If not, then install the following (and hope you don't have any problems lol)
+
+`pip install -r requirements.txt`
+
 Run the setup.py to install so that pip can see it.
 
 ```bash
